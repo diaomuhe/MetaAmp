@@ -27,4 +27,4 @@ Note: the sequence files, the mapping file and oligos.txt file should be in the 
 
 # Here is an example to use metaamp.data2.paired.pl
 
-> /gpfs/ebg_web/metaamp/bin/metaamp.dada2.paired.pl -map mapping_metaamp_gown_bac.txt -an metaamp_gown_bac -seqtype paired -oligos oligos.txt -pdiffs 0 -email muhe.diao@ucalgary.ca -maxN 0 -maxeeF 1 -maxeeR 1 -trunclenF 280 -trunclenR 260 -truncqF 2 -truncqR 4 -minoverlen 12 -maxdiffs 0 >& debug.txt &
+> /gpfs/ebg_web/metaamp/bin/metaamp.dada2.paired.pl -map mapping_metaamp_gown_bac.txt -an metaamp_gown_bac -seqtype paired -oligos oligos.txt -pdiffs 0 -email muhe.diao@ucalgary.ca -maxN 0 -maxeeF 1 -maxeeR 1 -trunclenF 280 -trunclenR 260 -truncqF 2 -truncqR 4 -minoverlen 12 -maxdiffs 0 >& debug.txt & 
