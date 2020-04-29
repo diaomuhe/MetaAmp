@@ -1,0 +1,30 @@
+1. Make a directory for metaamp
+> mkdir metaamp
+> cp your_data_path/*fastq.gz metaamp # copy all sequence file to metaamp directory
+
+2. Prepare mapping file
+> ls *.fastq.gz > sequence.list.txt # Make a list of sequence files
+> sed -n 'p;n' sequence.list.txt > read1.list.txt # Make a list of read1 files for the mapping file
+> sed -n 'n;p' sequence.list.txt > read2.list.txt # Make a list of read2 files for the mapping file
+> cut -d "-" -f 1-3 read1.list.txt > samplename.txt # Extract sample name for the mapping file
+
+Prepare the mapping file according to metaamp website http://ebg.ucalgary.ca/metaamp/help.html. Attention: treatment should be set > 1. 
+My mapping file is 'mapping_metaamp_gown_bac.txt'
+
+3. Prepare oligos file, format can be found http://ebg.ucalgary.ca/metaamp/tmp/2020-04-23-1353-Metaamp_test_asv/oligos.txt
+> cat > oligos.txt 
+forward	CCTACGGGAGGCAGCAG
+reverse	GACTACHVGGGTATCTAATCC
+
+# Paste your primers information into oligos.txt. ‘ctrl + c’ to exit after paste. If there are multiple primers, just put them in the different lines. 
+
+Note: the sequence files, the mapping file and oligos.txt file should be in the same directory
+
+4. Run MetaAmp
+# To see the program options: /gpfs/ebg_web/metaamp/bin/metaamp.dada2.paired.pl
+# To use otu approach: perl /gpfs/ebg_web/metaamp/bin/metaamp.pl
+# For single end sequence: perl /gpfs/ebg_web/metaamp/bin/metaamp.dada2.single.pl
+
+# Here is an example to use metaamp.data2.paired.pl
+
+> /gpfs/ebg_web/metaamp/bin/metaamp.dada2.paired.pl -map mapping_metaamp_gown_bac.txt -an metaamp_gown_bac -seqtype paired -oligos oligos.txt -pdiffs 0 -email muhe.diao@ucalgary.ca -maxN 0 -maxeeF 1 -maxeeR 1 -trunclenF 280 -trunclenR 260 -truncqF 2 -truncqR 4 -minoverlen 12 -maxdiffs 0 >& debug.txt &
