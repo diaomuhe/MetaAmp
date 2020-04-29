@@ -1,0 +1,5 @@
+519F: CAGCMGCCGCGGTAA
+805R: GACTACNVGGGTATCTAATCC
+
+Your region is 286 bp including primer sequences. After trimming the primer sequences, your insert is only around 250 bp. so,  "Trim amplicon to a fixed length"  cannot be bigger than 250 bp. if your insert size is 250,  "Maximum number of mismatches in the overlap region" set to less than 6 (set to 5). 
+
