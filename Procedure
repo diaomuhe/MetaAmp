@@ -3,10 +3,10 @@
 > cp your_data_path/*fastq.gz metaamp # copy all sequence file to metaamp directory
 
 2. Prepare mapping file
-> ls *.fastq.gz > sequence.list.txt # Make a list of sequence files
-> sed -n 'p;n' sequence.list.txt > read1.list.txt # Make a list of read1 files for the mapping file
-> sed -n 'n;p' sequence.list.txt > read2.list.txt # Make a list of read2 files for the mapping file
-> cut -d "-" -f 1-3 read1.list.txt > samplename.txt # Extract sample name for the mapping file
+> ls *.fastq.gz > sequence.list # Make a list of sequence files
+> sed -n 'p;n' sequence.list > read1.list # Make a list of read1 files for the mapping file
+> sed -n 'n;p' sequence.list > read2.list # Make a list of read2 files for the mapping file
+> cut -d "-" -f 1-3 read1.list > samplename.txt # Extract sample name for the mapping file
 
 Prepare the mapping file according to metaamp website http://ebg.ucalgary.ca/metaamp/help.html. Attention: Samplename shoud be unique , Treatment should be set > 1. 
 My mapping file is 'mapping_metaamp_gown_bac.txt'
