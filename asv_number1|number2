@@ -1,0 +1,1 @@
+In the asv fasta file, the id came as "asv_number1|number2",  the asv_number1 is the id and number2 shows how many reads in the asv for the analysis, from the number, we can know how abundant those organisms in the samples.
